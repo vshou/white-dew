@@ -2,7 +2,6 @@
 #include <pthread.h>
 #include <string.h>
 
-
 #ifndef WHITE_DEW_MEMORY_POOL_H
 #define WHITE_DEW_MEMORY_POOL_H
 
