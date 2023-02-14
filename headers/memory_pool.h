@@ -23,14 +23,17 @@ struct MEMORY_BLOCK
 // 全局内存池
 extern struct MEMORY_BLOCK * global_memory_pool[MAXIMUM_POOL];
 
-// 初始化内存块
-struct MEMORY_BLOCK * init_memory_block(int _index);
+// 初始化内存池头部内存块
+struct MEMORY_BLOCK * init_head_memory_block(int _index);
 
 // 开辟一块内存块
 void * dy_malloc(size_t _size);
 
+// 初始化内存块属性
+void init_memory_block(struct MEMORY_BLOCK * _block, struct MEMORY_BLOCK * _next, size_t _size);
+
 // 内存块链表扩容
-struct MEMORY_BLOCK * Expansion(struct MEMORY_BLOCK * _block, int _multiple, int _index);
+struct MEMORY_BLOCK * Expansion();
 
 // 释放内存
 void dy_free();
