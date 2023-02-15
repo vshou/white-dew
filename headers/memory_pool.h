@@ -13,6 +13,7 @@
 // 内存块结构体(链表型态)
 struct MEMORY_BLOCK
 {
+	size_t _cap;					// 内存块容量
 	void * _p;						// 需要返回给使用者的指针
 	void * _start;					// 内存块的起始地址
 	void * _end;					// 内存块的结束地址
@@ -33,7 +34,7 @@ void * dy_malloc(size_t _size);
 void init_memory_block(struct MEMORY_BLOCK * _block, struct MEMORY_BLOCK * _next, size_t _size);
 
 // 内存块链表扩容
-struct MEMORY_BLOCK * Expansion();
+struct MEMORY_BLOCK * Expansion(int _multiple);
 
 // 释放内存
 void dy_free();
