@@ -5,13 +5,12 @@
 #ifndef WHITE_DEW_MEMORY_POOL_H
 #define WHITE_DEW_MEMORY_POOL_H
 
-// 全局内存池的大小
-#define MAXIMUM_POOL 5
+
 // 开辟内存块的固定大小
 #define MEMORY_BLOCK_SIZE 4096
 
 // 内存块结构体(链表型态)
-struct MEMORY_BLOCK
+typedef struct MEMORY_BLOCK
 {
 	size_t _cap;					// 内存块容量
 	void * _p;						// 需要返回给使用者的指针
@@ -19,24 +18,33 @@ struct MEMORY_BLOCK
 	void * _end;					// 内存块的结束地址
 	struct MEMORY_BLOCK * _next;	// 指向下一内存块的指针
 	struct MEMORY_BLOCK * _new;		// 当前内存块链表最新的内存块指针
-};
+} MEMORY_BLOCK;
 
-// 全局内存池
-extern struct MEMORY_BLOCK * global_memory_pool[MAXIMUM_POOL];
+// 线程本地缓存 key
+static pthread_key_t pt_key;
 
-// 初始化内存池头部内存块
-struct MEMORY_BLOCK * init_head_memory_block(int _index);
+// 初始化一次控制参数
+static pthread_once_t pt_once;
+
+// 初始化线程本地缓存 key
+void init_pt_key();
+
+// 线程本地缓存销毁回调
+void destroy_function(void * _p);
 
 // 开辟一块内存块
 void * dy_malloc(size_t _size);
 
 // 初始化内存块属性
-void init_memory_block(struct MEMORY_BLOCK * _block, struct MEMORY_BLOCK * _next, size_t _size);
+void init_memory_block(MEMORY_BLOCK * _block, MEMORY_BLOCK * _next, size_t _size);
 
 // 内存块链表扩容
-struct MEMORY_BLOCK * Expansion(int _multiple);
+MEMORY_BLOCK * Expansion(int _multiple);
 
-// 释放内存
+// 释放线程所占内存 (适用于线程池)
 void dy_free();
+
+// 释放线程所占内存 (适用于单独创建线程)
+void dy_free_single();
 
 #endif //WHITE_DEW_MEMORY_POOL_H
