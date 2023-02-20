@@ -15,5 +15,5 @@
 
 ## 项目描述
 ```text
-TLS 高性能动态内存池
+TLS Dynamic Memory Pool
 ```
