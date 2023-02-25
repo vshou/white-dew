@@ -44,7 +44,4 @@ MEMORY_BLOCK * Expansion(int _multiple);
 // 释放线程所占内存 (适用于线程池)
 void dy_free();
 
-// 释放线程所占内存 (适用于单独创建线程)
-void dy_free_single();
-
 #endif //WHITE_DEW_MEMORY_POOL_H
