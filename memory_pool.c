@@ -6,11 +6,13 @@ static pthread_once_t pt_once = PTHREAD_ONCE_INIT;
 
 void init_pt_key()
 {
+	// 创建线程本地缓存 key
 	pthread_key_create(&pt_key, destroy_function);
 }
 
 void destroy_function(void * _p)
 {
+	// 内存块头部节点
 	MEMORY_BLOCK * _block = (MEMORY_BLOCK *) _p;
 	MEMORY_BLOCK * _block_;
 	while (1)
