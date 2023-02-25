@@ -134,10 +134,3 @@ void dy_free()
 	// 初始化头节点的 _new 属性
 	_head->_new = _head;
 }
-
-void dy_free_single()
-{
-	// 从线程本地存储获取头部内存块节点
-	MEMORY_BLOCK * _head = (MEMORY_BLOCK *) pthread_getspecific(pt_key);
-	_head->_new = _head;
-}
