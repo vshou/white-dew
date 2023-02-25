@@ -113,6 +113,7 @@ void * dy_malloc(size_t _size)
 
 void dy_free()
 {
+	// 从线程本地存储获取头部内存块节点
 	MEMORY_BLOCK * _head = (MEMORY_BLOCK *) pthread_getspecific(pt_key);
 	MEMORY_BLOCK * _block = _head;
 	MEMORY_BLOCK * _new_ = _block->_new;
