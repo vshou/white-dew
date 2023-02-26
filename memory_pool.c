@@ -22,6 +22,7 @@ void destroy_function(void * _p)
 			break;
 		}
 		_block_ = _block->_next;
+		// 释放内存
 		free(_block->_start);
 		free(_block);
 		_block = _block_;
