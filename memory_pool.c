@@ -46,10 +46,8 @@ MEMORY_BLOCK * Expansion(int _multiple)
 {
 	// 获取需要扩容的大小
 	int _size =  MEMORY_BLOCK_SIZE * _multiple;
-
 	// 生成内存块结构体
 	MEMORY_BLOCK * _block_ = (MEMORY_BLOCK *) malloc(sizeof(MEMORY_BLOCK));
-
 	// 初始化内存块
 	init_memory_block(_block_, NULL, _size);
 
@@ -120,7 +118,6 @@ void dy_free()
 	MEMORY_BLOCK * _head = (MEMORY_BLOCK *) pthread_getspecific(pt_key);
 	MEMORY_BLOCK * _block = _head;
 	MEMORY_BLOCK * _new_ = _block->_new;
-
 	// 循环释放链表内存
 	while (1)
 	{
