@@ -69,6 +69,7 @@ A dynamic memory pool static library written in C language and implemented based
    (1) Use dy_malloc(size_t _size) replaces the original malloc(size_t _size) to open up memory.
        
        int * a = (int *) malloc(sizeof(int));  ===>   int * a = (int *) dy_malloc(sizeof(int));
+       
    (2) Memory release problem.
        
        · If you manually open a new thread (or the thread has a complete life cycle), you do not need to release memory manually, the callback method will be automatically executed at the end of the thread to free memory.
@@ -81,6 +82,7 @@ A dynamic memory pool static library written in C language and implemented based
 1. 首先从发布的 Releases 或者代码 release 分支中下载对应版本的静态库压缩包文件, 当然也可以直接下载 main 分支源码自行编译静态库
     
 2. 以 release 分支代码包为例
+
    文件结构如下:
               ./white-dew
               ├── headers
