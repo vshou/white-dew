@@ -1,7 +1,7 @@
 # white-dew | 白露
 <div align="center">
     <img alt="C Badge" src="https://img.shields.io/badge/C-3e4aac?logo=c&logoColor=fff&style=flat"/>
-    <img alt="C++ Badge" src="https://img.shields.io/badge/C%2B%2B-00599C?logo=cplusplus&logoColor=fff&style=flat"/>
+    <!-- <img alt="C++ Badge" src="https://img.shields.io/badge/C%2B%2B-00599C?logo=cplusplus&logoColor=fff&style=flat"/> -->
     <img alt="CMake Badge" src="https://img.shields.io/badge/CMake-cf3d7e?logo=cmake&logoColor=fff&color=cf3d7e&style=flat"/>
     <img alt="Linux Badge" src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=000&color=yellow&style=flat"/>
     <img alt="License Badge" src="https://img.shields.io/github/license/vshowc/white-dew"/>
@@ -24,13 +24,13 @@ A dynamic memory pool static library written in C language and implemented based
 
 ## What is the problem white-dew solved | 白露解决了什么问题
 ```textmate
-1. In the case of high concurrency, the frequent opening and release of memory in C/C++ language
-2. Memory management of C/C++ language
+1. In the case of high concurrency, the frequent opening and release of memory in C language
+2. Memory management of C language
 ```
 
 ```textmate
-1. 高并发情景下, C/C++ 语言中内存频繁开辟以及释放问题
-2. C/C++ 语言内存管理问题
+1. 高并发情景下, C 语言中内存频繁开辟以及释放问题
+2. C 语言内存管理问题
 ```
 
 ## How to quickly start using white-dew | 如何快速开始使用白露
