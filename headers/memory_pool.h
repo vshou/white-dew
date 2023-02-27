@@ -41,7 +41,8 @@ void init_memory_block(MEMORY_BLOCK * _block, MEMORY_BLOCK * _next, size_t _size
 // 内存块链表扩容
 MEMORY_BLOCK * Expansion(int _multiple);
 
-// 释放线程所占内存 (适用于线程池)
+// 释放线程所占内存
+// 说明: 适用于线程池情况, 手动创建线程执行时不需要调用, 会在线程销毁时自动调用回调函数释放内存
 void dy_free();
 
 #endif //WHITE_DEW_MEMORY_POOL_H
