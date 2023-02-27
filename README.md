@@ -29,8 +29,8 @@ A dynamic memory pool static library written in C language and implemented based
 ```
 
 ```textmate
-1. 高并发情景下, C/C++ 语言中内存频繁开辟以及释放问题
-2. C/C++ 语言内存管理问题
+1. 高并发情景下, C 语言中内存频繁开辟以及释放问题
+2. C 语言内存管理问题
 ```
 
 ## How to quickly start using white-dew | 如何快速开始使用白露
