@@ -67,14 +67,10 @@ A dynamic memory pool static library written in C language and implemented based
 4. Use white-dew in the project.
     
    (1) Use dy_malloc(size_t _size) replaces the original malloc(size_t _size) to open up memory.
-       
        int * a = (int *) malloc(sizeof(int));  ===>   int * a = (int *) dy_malloc(sizeof(int));
-       
    (2) Memory release problem.
-       
        · If you manually open a new thread (or the thread has a complete life cycle), you do not need to release memory manually, the callback method will be automatically executed at the end of the thread to free memory.
        · If you use thread pool, you only need to call the dy_free() method at the end of the overall business.
-           
        dy_free();
 ```
 
@@ -110,13 +106,9 @@ A dynamic memory pool static library written in C language and implemented based
 4. 在项目中使用 white-dew
     
    (1) 用 dy_malloc 代替原始的 malloc 开辟内存
-       
        int * a = (int *) malloc(sizeof(int));  ===>   int * a = (int *) dy_malloc(sizeof(int));
-           
    (2) 内存释放问题
-       
        如果是手动开辟新线程(或者说线程有完整的生命周期), 则不需要手动释放内存, 在线程结束时会自动执行回调方法释放内存
        如果是使用线程池, 则只需要在整体业务结束时调用 dy_free() 方法
-           
        dy_free();
 ```
